@@ -1,3 +1,6 @@
 .vscode
 .vscode
-trellog
+trg
+./trg.exe
+trg.exe
+test.trg.json

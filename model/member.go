@@ -12,11 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package model
 
-import "github.com/Karm/trg/cmd"
+import "fmt"
 
-// See cmd/root.go for the meat
-func main() {
-	cmd.Execute()
+// Member struct
+type Member struct {
+	ID       string `json:"id"`
+	FullName string `json:"fullName"`
+	Username string `json:"username"`
+}
+
+// ToString spits out the format we need...
+func (m *Member) ToString() string {
+	return fmt.Sprintf(
+		`ID:   %s
+FullName: %s
+Username:  %s`, m.ID, m.FullName, m.Username)
 }

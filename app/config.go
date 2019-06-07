@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package app
 
-import "github.com/Karm/trg/cmd"
-
-// See cmd/root.go for the meat
-func main() {
-	cmd.Execute()
+type Config struct {
+	APIURL  string `json:"apiurl"`
+	Key     string `json:"key"`
+	Token   string `json:"token"`
+	BoardID string `json:"boardId"`
 }

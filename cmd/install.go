@@ -12,11 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package cmd
 
-import "github.com/Karm/trg/cmd"
+import (
+	"github.com/spf13/cobra"
+)
 
-// See cmd/root.go for the meat
-func main() {
-	cmd.Execute()
+// installCmd represents the install command
+var installCmd = &cobra.Command{
+	Use:   "install",
+	Short: "Installation wizzard",
+	Long:  `Installation wizzard takes you through the steps of adding token, key, board ID and bash completion.`,
+	Run: func(cmd *cobra.Command, args []string) {
+		installApp()
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(installCmd)
 }

@@ -12,11 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package model
 
-import "github.com/Karm/trg/cmd"
+import "fmt"
 
-// See cmd/root.go for the meat
-func main() {
-	cmd.Execute()
+// Label struct
+type Label struct {
+	ID      string `json:"id"`
+	IDBoard string `json:"idBoard"`
+	Name    string `json:"name"`
+	Color   string `json:"color"`
+}
+
+// ToString spits out the format we need...
+func (l *Label) ToString() string {
+	return fmt.Sprintf(
+`ID:      %s
+IDBoard: %s
+Name:    %s
+Color:   %s`, l.ID, l.IDBoard , l.Name, l.Color)
 }
